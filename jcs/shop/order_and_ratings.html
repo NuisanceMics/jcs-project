@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCS Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #logo {
+            width: 50px; /* Adjust the size of the logo as needed */
+            height: auto;
+        }
+        #title-container {
+            display: flex;
+            align-items: center; /* Vertically align the logo and text */
+        }
+        #title-container h1 {
+            margin-left: 10px; /* Add space between logo and title */
+            font-size: 24px;
+        }
+        img{
+            width: 200px;
+        }
+        #item{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!--for header-->
+    <div class="container-fluid p-3" id="header">
+        <div class="container-sm" id="title">
+            <div class="d-flex justify-content-between">
+                <h2 class="d-flex justify-content-start">JCS STORE</h2>
+                <a class=" d-flex justify-content-end text-dark fw-bold text-decoration-none mx-3" href="#"><i class="fa-regular fa-user"></i>login</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white py-3">
+        <div id="container" class="container d-flex flex-column align-items-center">
+            <div class="d-flex w-100 justify-content-evenly align-items-center">
+                <span id="title-container">
+                    <a href="index.html">
+                        <img class="img-fluid" id="logo" src="logo.png" alt="logo">
+                    </a>
+                    <h1>JCS SHOP</h1>
+                </span>
+                
+                <div id="search-container">
+                    <span id="search-icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" id="search-input" placeholder="Search instruments...">
+                </div>
+
+            </div>
+
+            <!-- navbar -->
+            <nav id="menu" class="mt-3 text-center">
+                <a href="order_and_ratings.html" class="text-dark fw-bold text-decoration-none mx-3">Orders</a>
+                <a href="add_to_cart.html" class="text-dark fw-bold text-decoration-none mx-3">Cart</a>
+                <a href="contact_page.html" class="text-dark fw-bold text-decoration-none mx-3">contact</a>
+            </nav>
+
+        </div>
+    </header>
+    <main class="container">
+        <div class="row justify-content-center">
+            
+            <!--start of the product-->
+
+            <div class="col-md-5 product-card d-flex align-items-center  p-3 mb-3">
+                <div class="product-image me-5">
+                    <img src="guitar.jpeg" alt="Classic Guitar" class="img-fluid" style="width: 150px;">
+                </div>
+                <div class="product-details ms-5">
+                    <h3 class="fw-bold">Classic Guitar</h3>
+                    <p>Color: Original</p>
+                    <p class="text-danger fw-bold">$99.00</p>
+                    <div class="quantity-control d-flex align-items-center mt-2">
+                        <label for="quantity1" class="me-2">Qty:</label>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="decreaseQuantity('quantity1')">-</button>
+                        <input type="text" id="quantity1" class="form-control text-center mx-2" value="1" style="width: 50px;" readonly>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="increaseQuantity('quantity1')">+</button>
+                    </div>
+                    <div class="product-buttons d-flex gap-2 mt-3">
+                        <button class="btn btn-outline-secondary">buy again</button>
+                        <button class="btn btn-danger text-white">review</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-5 product-card d-flex align-items-center  p-3 mb-3">
+                <div class="product-image me-5">
+                    <img src="string.jpeg" alt="Guitar String" class="img-fluid" style="width: 150px;">
+                </div>
+                <div class="product-details ms-5">
+                    <h3 class="fw-bold">Guitar String</h3>
+                    <p>Color: Black</p>
+                    <p class="text-danger fw-bold">$3.99</p>
+                    <div class="quantity-control d-flex align-items-center mt-2">
+                        <label for="quantity2" class="me-2">Qty:</label>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="decreaseQuantity('quantity2')">-</button>
+                        <input type="text" id="quantity2" class="form-control text-center mx-2" value="1" style="width: 50px;" readonly>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="increaseQuantity('quantity2')">+</button>
+                    </div>
+                    <div class="product-buttons d-flex gap-2 mt-3">
+                        <button class="btn btn-outline-secondary">buy again</button>
+                        <button class="btn btn-danger text-white">review</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 product-card d-flex align-items-center  p-3 mb-3">
+                <div class="product-image me-5">
+                    <img src="guitar.jpeg" alt="Classic Guitar" class="img-fluid" style="width: 150px;">
+                </div>
+                <div class="product-details ms-5">
+                    <h3 class="fw-bold">Classic Guitar</h3>
+                    <p>Color: Original</p>
+                    <p class="text-danger fw-bold">$99.00</p>
+                    <div class="quantity-control d-flex align-items-center mt-2">
+                        <label for="quantity1" class="me-2">Qty:</label>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="decreaseQuantity('quantity1')">-</button>
+                        <input type="text" id="quantity1" class="form-control text-center mx-2" value="1" style="width: 50px;" readonly>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="increaseQuantity('quantity1')">+</button>
+                    </div>
+                    <div class="product-buttons d-flex gap-2 mt-3">
+                        <button class="btn btn-outline-secondary">buy again</button>
+                        <button class="btn btn-danger text-white">review</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-5 product-card d-flex align-items-center  p-3 mb-3">
+                <div class="product-image me-5">
+                    <img src="string.jpeg" alt="Guitar String" class="img-fluid" style="width: 150px;">
+                </div>
+                <div class="product-details ms-5">
+                    <h3 class="fw-bold">Guitar String</h3>
+                    <p>Color: Black</p>
+                    <p class="text-danger fw-bold">$3.99</p>
+                    <div class="quantity-control d-flex align-items-center mt-2">
+                        <label for="quantity2" class="me-2">Qty:</label>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="decreaseQuantity('quantity2')">-</button>
+                        <input type="text" id="quantity2" class="form-control text-center mx-2" value="1" style="width: 50px;" readonly>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="increaseQuantity('quantity2')">+</button>
+                    </div>
+                    <div class="product-buttons d-flex gap-2 mt-3">
+                        <button class="btn btn-outline-secondary">buy again</button>
+                        <button class="btn btn-danger text-white">review</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+
+
+
+
+
+    <!--Footer-->
+    <footer class="bg-dark text-white mt-4 pt-5 pb-4">
+        <div class="d-flex flex-column mb-3 ps-5">
+            <h4>Follow us on</h4>
+            <div class="d-flex flex-row px-3">
+                <a href="#" class="me-3 text-white"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="me-3 text-white"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="d-flex justify-content-between mt-5">
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex flex-column mb-3">
+                    <p class="">@ Robinson, Gentri JCS Musical Instrument Shop 2nd floor near watsons</p>
+                    <p class="">Since 2016</p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start">
+                <div class="d-flex flex-column me-3 ">
+                    <h3>Payment accept</h3>
+                        <div class="d-flex flex-row px-5">
+                            <div class="d-flex justify-content-center"></div>
+                            <p class="me-3">Gcash</p>
+                            <p class="me-3">Cash</p>
+                        </div>
+                </div>
+            </div>
+            
+                
+            </div>
+           
+        </div>
+
+        
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function increaseQuantity(id) {
+            const input = document.getElementById(id);
+            let currentValue = parseInt(input.value);
+            input.value = currentValue + 1;
+        }
+    
+        function decreaseQuantity(id) {
+            const input = document.getElementById(id);
+            let currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCS Store - Order Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            background-color: tomato;
+            color: white;
+            padding: 10px;
+        }
+        #header .login-link {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #title-container {
+            display: flex;
+            align-items: center;
+        }
+        #title-container img {
+            margin-right: 10px;
+        }
+        #title-container h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        #menu a {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0 15px;
+            color: black;
+            text-decoration: none;
+        }
+        .product-list {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .product-list img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .payment-method {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .payment-method.active {
+            background-color: #f05722;
+            color: white;
+        }
+        .order-summary {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .btn-order {
+            background-color: #f05722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header" class="d-flex justify-content-between align-items-center">
+        <h2>JCS STORE</h2>
+        <a href="#" class="login-link"><i class="fa-regular fa-user"></i> Login</a>
+    </div>
+
+    <!-- Title and Search -->
+    <header class="container my-3">
+        <div class="d-flex justify-content-evenly align-items-center">
+            <div id="title-container">
+                <img src="logo.png" alt="logo" width="50" height="50">
+                <h1>JCS Shop</h1>
+            </div>
+
+            <div id="search-container">
+                <span id="search-icon">
+                    <i class="fas fa-search"></i>
+                </span>
+                <input type="text" id="search-input" placeholder="Search instruments...">
+            </div>
+
+        </div>
+        <!-- Menu -->
+        <nav id="menu" class="text-center mt-3">
+            <a href="order_and_ratings.html" class="text-dark fw-bold text-decoration-none mx-3">Orders</a>
+            <a href="add_to_cart.html" class="text-dark fw-bold text-decoration-none mx-3">Cart</a>
+            <a href="contact_page.html" class="text-dark fw-bold text-decoration-none mx-3">contact</a>
+        </nav>
+    </header>
+
+    <!-- Product List and Payment Section -->
+    <div class="container mt-3 pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-list pt-3">
+                    <img src="guitar.jpeg" alt="Guitar Classic">
+                    <div>
+                        <h6>Guitar Classic</h6>
+                        <p>Color: Original</p>
+                        <p class="text-danger">$99.00 <span>Qty: 1</span></p>
+                    </div>
+                </div>
+                <div class="product-list pt-3" >
+                    <img src="string.jpeg" alt="Guitar String">
+                    <div>
+                        <h6>Guitar String</h6>
+                        <p>Color: Black</p>
+                        <p class="text-danger">$3.99 <span>Qty: 1</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Select Payment Method</h4>
+                <div class="payment-method active" onclick="selectPaymentMethod('cash')">
+                    <span>Cash</span>
+                    <small>Pay when you receive</small>
+                </div>
+                <div class="payment-method" onclick="selectPaymentMethod('gcash')">
+                    <span>GCash</span>
+                    <small>Pay now and get the item in shop</small>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary mt-4">
+                    <h5>Order Summary:</h5>
+                    <p>Subtotal (2 items): <span class="float-end">$102.99</span></p>
+                    <p>Discount: <span class="float-end">$0.99</span></p>
+                    <p><strong>Total:</strong> <span class="float-end text-danger">$102.00</span></p>
+                </div>
+                <button class="btn-order">PLACE ORDER NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-4 pt-5 pb-4">
+        <div class="d-flex flex-column mb-3 ps-5">
+            <h4>Follow us on</h4>
+            <div class="d-flex flex-row px-3">
+                <a href="#" class="me-3 text-white"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="me-3 text-white"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="d-flex justify-content-between mt-5">
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex flex-column mb-3">
+                        <p class="">@ Robinson, Gentri JCS Musical Instrument Shop 2nd floor near watsons</p>
+                        <p class="">Since 2016</p>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <div class="d-flex flex-column me-3 ">
+                        <h3>Payment accept</h3>
+                        <div class="d-flex flex-row px-5">
+                            <p class="me-3">Gcash</p>
+                            <p class="me-3">Cash</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function selectPaymentMethod(method) {
+            const methods = document.querySelectorAll('.payment-method');
+            methods.forEach((element) => {
+                element.classList.remove('active');
+            });
+            document.querySelector(`.payment-method[onclick="selectPaymentMethod('${method}')"]`).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

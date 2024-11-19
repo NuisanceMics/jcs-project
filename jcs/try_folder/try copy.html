@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Review - JCS STORE</title>
+    <!-- Bootstrap 5.3.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../codetry/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0">JCS STORE</h1>
+        <a href="#" class="text-white">Login</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1 class="text-center mb-3">Write a review</h1>
+        <div class="row justify-content-center">
+            
+            <div class="container text-center">
+                <div class="row">
+                    <!--image section-->
+                  <div class="col-4 border border-secondary">
+                    <img src="" alt="">
+                    <!--Ratings insert here-->
+                    <div class="text-center">
+                        <button type="submit" id="btn-review">Submit</button>
+                    </div>
+                  </div>
+
+                  <!--form-->
+                  <div class="col-8 border border-secondary">
+                    <form>
+                        <!-- Text Review -->
+                        <div class="mb-4 text-start">
+                            
+                            <h3>Classic Guitar</h3>
+                            <p>Color: Original</p>
+                            <textarea id="review-text" class="form-control" rows="4" placeholder="Write a review about the product, color, design, feel, or more."></textarea>
+                        </div>
+    
+                        <!-- Photo/Video Upload -->
+                        <div class="mb-4">
+                            <label for="photo-upload" class="form-label">Add photo or video</label>
+                            <div class="border rounded d-flex flex-column align-items-center justify-content-center py-5">
+                                <span class="text-muted">Add photo or video</span>
+                                <input type="file" id="photo-upload" class="form-control d-none">
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
